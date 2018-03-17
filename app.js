@@ -70,5 +70,5 @@ function checkState(channel) {
 
 function online(name, logo, game, viewers, followers) {
     let card = '<article class="card"><h3>' + name + ' (' + game + ')' + '</h3><p>' + followers + ' Follower | ' + viewers + ' Viewer</p><img src="' + logo + '" alt="' + name + ' logo"></article>';
-    document.getElementById('wrapper').insertAdjacentHTML('beforeend', card)
+    document.getElementById('container').insertAdjacentHTML('beforeend', card)
 }
