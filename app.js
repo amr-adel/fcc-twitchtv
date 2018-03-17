@@ -1,4 +1,4 @@
-const channels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
+const channels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "taketv", "habathcx", "RobotCaleb", "brobson"];
 
 
 //// http://youmightnotneedjquery.com
@@ -28,9 +28,11 @@ const channels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbec
 
 
 
-channels.forEach(function(channel) {
-    checkState(channel);
-});
+function test() {
+    channels.forEach(function(channel) {
+        checkState(channel);
+    });
+}
 
 
 function checkState(channel) {
@@ -45,6 +47,12 @@ function checkState(channel) {
                 console.log("offline");
             } else {
                 console.log("online");
+                const name = data.stream.channel.display_name;
+                const logo = data.stream.channel.logo;
+                const game = data.stream.game;
+                const viewers = data.stream.viewers;
+                const followers = data.stream.channel.followers;
+                online(name, logo, game, viewers, followers);
             }
         } else {
             // We reached our target server, but it returned an error
@@ -58,4 +66,9 @@ function checkState(channel) {
     };
     
     checkRequest.send();
+}
+
+function online(name, logo, game, viewers, followers) {
+    let card = '<article class="card"><h3>' + name + ' (' + game + ')' + '</h3><p>' + followers + ' Follower | ' + viewers + ' Viewer</p><img src="' + logo + '" alt="' + name + ' logo"></article>';
+    document.getElementById('wrapper').insertAdjacentHTML('beforeend', card)
 }
