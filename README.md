@@ -1,1 +1,1 @@
-twitchtv-api
+# Twitchtv JSON API
