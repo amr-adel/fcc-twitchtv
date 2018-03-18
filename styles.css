@@ -11,13 +11,6 @@
 
 a, a:visited {
     text-decoration: none;
-    color: inherit;
-}
-
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
 }
 
 body {
@@ -27,7 +20,7 @@ body {
 
 .header {
     height: 48px;
-    width: 100vw;
+    width: 100%;
     background-color: var(--main-l);
     text-align: center;
 }
@@ -41,7 +34,7 @@ body {
     width: 100%;
     max-width: 500px;
     background-color: var(--grey-l);
-    margin: 20px auto;
+    margin: 24px auto 0;
 }
 
 .card {
@@ -51,6 +44,7 @@ body {
     border-bottom: none;
     padding: 10px;
     transition: background-color .2s ease-out;
+    background: linear-gradient(var(--grey-l), #fff);
     overflow: auto;
 }
 
@@ -59,7 +53,7 @@ body {
 }
 
 .card:hover {
-    background-color: #fff;
+    background: #fff;
 }
 
 .avatar {
@@ -103,7 +97,7 @@ body {
     color: var(--border);
     line-height: 16px;
     font-weight: 600;
-    width: calc(100% - 93px);
+    width: calc(100% - 96px);
     float: right;
 }
 
@@ -138,4 +132,32 @@ body {
 
 .game::before {
     content: "("
+}
+
+/* =================================================================== */
+
+.footer__follow {
+    margin: 12px auto;
+    width: 200px;
+    text-align: center;
+    cursor: default;
+}
+
+.footer__follow a {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    font-size: 20px;
+    fill: var(--border);
+    margin: 5px;
+    transition: fill .2s ease-out;
+}
+
+.footer__follow a:last-child {
+    width: 20px;
+    margin-left: 2px;
+}
+
+.footer__follow a:hover {
+    fill: var(--main-l);
 }
