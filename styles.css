@@ -90,6 +90,8 @@ body {
     color: var(--main-l);
     line-height: 18px;
     height: 18px;
+    width: calc(100% - 96px);
+    float: right;
 }
 
 .status {
